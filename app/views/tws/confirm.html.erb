@@ -1,0 +1,12 @@
+<h2>以下の内容でつぶやく</h2>
+
+<%= form_for(@tw) do |f| %>
+    <%= f.hidden_field :content %>
+  <%= @tw.content %>
+    <br>
+    <%= f.submit "投稿", class: "btn btn-primary" %>
+<% end %>
+<%= form_for(@tw, url: new_tw_path, method: 'get') do |f| %>
+  <%= f.hidden_field :content %>
+  <%= f.submit "もどる",name:'back',class: "btn btn-warning" %>
+<% end %>

@@ -1,0 +1,24 @@
+<p><%=notice%></p>
+<h1>ツイート一覧</h1>
+<form>
+<div class="container">
+ <div class="form-group">
+ <% @tws.each do |tw| %>
+  <div class="row">
+   <div class="col-sm-2" id="profile">
+   </div>
+  <div class="col-sm-8 tweet_box">
+   <div class="tweets">
+  <%= tw.content %><br>
+   <%= link_to "編集", edit_tw_path(tw.id),data: { confirm: '本当に編集していいですか？'}  ,class: "btn btn-success btn-sm" %>
+   <%= link_to "削除", tw_path(tw.id), method: :delete, data: { confirm: '本当に削除していいですか？'} ,class: "btn btn-danger btn-sm" %>
+  </div>
+  </div>
+  <div class="col-sm-2" id="recommend_user">
+   </div>
+ </div>
+<% end %>
+</div>
+</form>
+</div>
+
